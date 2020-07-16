@@ -1,0 +1,3 @@
+# .gitignore
+# visit: https://github.com/microverseinc/linters-config/tree/master/javascript
+node_modules/
