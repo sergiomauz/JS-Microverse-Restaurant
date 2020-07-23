@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "development": "webpack --mode development",
-    "production": "webpack -p",
+    "dev": "webpack --mode development",
+    "pro": "webpack -p",
     "watch": "webpack --w --mode development",
     "server": "webpack-dev-server --open"
   },
@@ -41,5 +41,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1"
+  }
 }
