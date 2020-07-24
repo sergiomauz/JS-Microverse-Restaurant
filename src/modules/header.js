@@ -1,14 +1,34 @@
+import Home from './home';
+import Menu from './menu';
+import Contact from './contact';
+
 const Navbar = () => {
-  const addClickListeners = (element, action) => {
-    element.addEventListener('click', action);
+  let selectedModule;
+  const addClickListeners = (element, item) => {
+    const main = document.querySelector('main');
+    element.addEventListener('click', () => {
+      switch (item) {
+        case 'Menu':
+          selectedModule = Menu();
+          break;
+        case 'Contact':
+          selectedModule = Contact();
+          break;
+        case 'Home':
+          selectedModule = Home();
+          break;
+        default:
+          break;
+      }
+      main.innerHTML = '';
+      main.appendChild(selectedModule.display());
+    });
   };
 
   const create = () => {
     const items = ['Home', 'Menu', 'Contact'];
     const headerPage = document.createElement('header');
-
-    const navBar = document.createElement('nav');
-    navBar.className = 'navbar navbar-expand-md navbar-dark fixed-top bg-dark';
+    headerPage.className = 'navbar navbar-expand-md navbar-dark fixed-top bg-dark';
 
     const logo = document.createElement('a');
     logo.className = 'navbar-brand';
@@ -18,7 +38,7 @@ const Navbar = () => {
     toggler.className = 'navbar-toggler';
     toggler.innerHTML = '<span class="navbar-toggler-icon"></span>';
 
-    const collapser = document.createElement('div');
+    const collapser = document.createElement('nav');
     collapser.className = 'collapse navbar-collapse';
 
     const ulMenu = document.createElement('ul');
@@ -31,18 +51,17 @@ const Navbar = () => {
       lnkMenu.className = 'nav-link';
       lnkMenu.href = '#';
       lnkMenu.innerHTML = item;
-      addClickListeners(lnkMenu, () => { alert(); });
+      addClickListeners(lnkMenu, item);
       liMenu.appendChild(lnkMenu);
 
       ulMenu.appendChild(liMenu);
     });
 
-    navBar.appendChild(logo);
-    navBar.appendChild(toggler);
+    headerPage.appendChild(logo);
+    headerPage.appendChild(toggler);
     collapser.appendChild(ulMenu);
-    navBar.appendChild(collapser);
+    headerPage.appendChild(collapser);
 
-    headerPage.appendChild(navBar);
     return headerPage;
   };
 
