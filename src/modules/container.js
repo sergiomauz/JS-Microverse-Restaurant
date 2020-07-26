@@ -2,14 +2,12 @@ const Container = () => {
   const create = () => {
     const mainContainer = document.createElement('main');
     mainContainer.className = 'container mt-4';
-    mainContainer.innerHTML = 'main main';
-
     return mainContainer;
   };
 
-  const display = () => create();
+  const get = () => create();
 
-  return { display };
+  return { get };
 };
 
 export default Container;

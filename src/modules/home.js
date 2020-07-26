@@ -1,14 +1,14 @@
 const Home = () => {
   const create = () => {
-    const mainContainer = document.createElement('div');
-    mainContainer.innerHTML = 'Home';
+    const divHome = document.createElement('div');
+    divHome.className = 'banner active';
 
-    return mainContainer;
+    return divHome;
   };
 
-  const display = () => create();
+  const get = () => create();
 
-  return { display };
+  return { get };
 };
 
 export default Home;

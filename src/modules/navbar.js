@@ -1,8 +1,9 @@
 import Home from './home';
 import Menu from './menu';
 import Contact from './contact';
+import Logo from '../img/small-logo.png';
 
-const Navbar = () => {
+const Navbar = (items) => {
   let selectedModule;
   const addClickListeners = (element, item) => {
     const main = document.querySelector('main');
@@ -15,24 +16,26 @@ const Navbar = () => {
           selectedModule = Contact();
           break;
         case 'Home':
-          selectedModule = Home();
-          break;
         default:
+          selectedModule = Home();
           break;
       }
       main.innerHTML = '';
-      main.appendChild(selectedModule.display());
+      main.appendChild(selectedModule.get());
     });
   };
 
   const create = () => {
-    const items = ['Home', 'Menu', 'Contact'];
     const headerPage = document.createElement('header');
-    headerPage.className = 'navbar navbar-expand-md navbar-dark fixed-top bg-dark';
+    headerPage.className = 'navbar navbar-expand-md navbar-dark fixed-top bg-navbar';
 
     const logo = document.createElement('a');
     logo.className = 'navbar-brand';
-    logo.innerHTML = 'PONDEROSA';
+
+    const imgLogo = new Image();
+    imgLogo.src = Logo;
+    imgLogo.className = 'rounded small-logo';
+    logo.appendChild(imgLogo);
 
     const toggler = document.createElement('button');
     toggler.className = 'navbar-toggler';
@@ -49,7 +52,7 @@ const Navbar = () => {
 
       const lnkMenu = document.createElement('a');
       lnkMenu.className = 'nav-link';
-      lnkMenu.href = '#';
+      lnkMenu.href = `#${item}`;
       lnkMenu.innerHTML = item;
       addClickListeners(lnkMenu, item);
       liMenu.appendChild(lnkMenu);
@@ -65,9 +68,9 @@ const Navbar = () => {
     return headerPage;
   };
 
-  const display = () => create();
+  const get = () => create();
 
-  return { display };
+  return { get };
 };
 
 export default Navbar;
