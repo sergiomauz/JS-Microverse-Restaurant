@@ -4,8 +4,8 @@ import Contact from './contact';
 import Logo from '../img/small-logo.png';
 
 const Navbar = (items) => {
-  let selectedModule;
   const addClickListeners = (element, item) => {
+    let selectedModule;
     const main = document.querySelector('main');
     element.addEventListener('click', () => {
       switch (item) {
@@ -43,6 +43,9 @@ const Navbar = (items) => {
 
     const collapser = document.createElement('nav');
     collapser.className = 'collapse navbar-collapse';
+    toggler.addEventListener('click', () => {
+      collapser.classList.toggle('show');
+    });
 
     const ulMenu = document.createElement('ul');
     ulMenu.className = 'navbar-nav mr-auto';
@@ -52,7 +55,7 @@ const Navbar = (items) => {
 
       const lnkMenu = document.createElement('a');
       lnkMenu.className = 'nav-link';
-      lnkMenu.href = `#${item}`;
+      lnkMenu.href = '#';
       lnkMenu.innerHTML = item;
       addClickListeners(lnkMenu, item);
       liMenu.appendChild(lnkMenu);

@@ -20,7 +20,7 @@ body {
 }
 
 .bg-navbar {
-  background-color: #0c0c0c;
+  background-color: #000;
 }
 
 .bg-card-header {
@@ -29,14 +29,14 @@ body {
 
 .rounded-logo {
   border-radius: 35%;
-  max-width: 85%;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .banner {
   height: 32rem;
   background-image: url(../img/banner.jpg);
   background-size: 100% 100%;
-  border-radius: 25px;
 }
 
 .featurette-divider {
