@@ -1,0 +1,50 @@
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+  background-image: url(../img/background.jpg);
+}
+
+.transparency {
+  opacity: 0.85;
+}
+
+.small-logo {
+  height: 35px;
+  width: 150px;
+}
+
+.medium-logo {
+  height: 350px;
+  width: 350px;
+}
+
+.bg-navbar {
+  background-color: #000;
+}
+
+.bg-card-header {
+  background-color: #bfb09a;
+}
+
+.rounded-logo {
+  border-radius: 35%;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.banner {
+  height: 32rem;
+  background-image: url(../img/banner.jpg);
+  background-size: 100% 100%;
+}
+
+.featurette-divider {
+  margin: 5rem 0;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
