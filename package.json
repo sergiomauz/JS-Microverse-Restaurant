@@ -31,6 +31,8 @@
     "eslint-plugin-import": "^2.20.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "json-loader": "^0.5.7",
+    "style-loader": "^1.2.1",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-csstree-validator": "^1.8.0",
@@ -42,7 +44,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "bootstrap": "^4.5.0"
   }
 }
